@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class MoveTowardTarget : MonoBehaviour {
 
-	public Transform Despawn;
 	public float speed;
+	public string targettag;
 	// Use this for initialization
 	void Start () {
 		
@@ -13,7 +13,8 @@ public class MoveTowardTarget : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		transform.position = Vector3.MoveTowards (transform.position, Despawn.transform.position, (speed * 0.1f));
+		transform.position = Vector3.MoveTowards (transform.position, 
+							  GameObject.FindGameObjectWithTag(targettag).transform.position, (speed * 0.1f));
 	}
 
 	void OnCollisionEnter (Collision col)
