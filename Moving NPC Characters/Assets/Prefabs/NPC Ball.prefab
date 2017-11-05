@@ -57,7 +57,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 6505616fc41ca0e499bd4f3c041f2eb7, type: 2}
+  - {fileID: 2100000, guid: 75ae5d9c96fac974eabc9a1bdf274b5b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -74,6 +74,7 @@ MeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
 --- !u!33 &33591495969780220
 MeshFilter:
@@ -108,8 +109,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bf533d047eb2544699134126c12e32a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetTag: Despawn
-  speed: 1
+  speed: 0.1
+  targettag: Despawn
 --- !u!135 &135544741939388868
 SphereCollider:
   m_ObjectHideFlags: 1

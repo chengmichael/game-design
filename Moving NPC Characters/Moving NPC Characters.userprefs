@@ -1,10 +1,30 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\MoveTowardTarget.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\AutoSpawnItem.cs">
     <Files>
-      <File FileName="Assets\Scripts\Spawn_NPC.cs" Line="5" Column="41" />
-      <File FileName="Assets\Scripts\MoveTowardTarget.cs" Line="23" Column="12" />
+      <File FileName="Assets\Scripts\Spawn_NPC.cs" Line="32" Column="27" />
+      <File FileName="Assets\Scripts\MoveTowardTarget.cs" Line="17" Column="53" />
+      <File FileName="Assets\Scripts\HoldItems.cs" Line="73" Column="5" />
+      <File FileName="Assets\Scripts\AutoSpawnItem.cs" Line="8" Column="31" />
     </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Moving NPC Characters" expanded="True">
+            <Node name="Assembly-CSharp" expanded="True">
+              <Node name="Scripts" expanded="True">
+                <Node name="AutoSpawnItem.cs" selected="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.NUnit.TestPad">
+        <State name="__root__">
+          <Node name="Moving NPC Characters" expanded="True" selected="True" />
+        </State>
+      </Pad>
+    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
