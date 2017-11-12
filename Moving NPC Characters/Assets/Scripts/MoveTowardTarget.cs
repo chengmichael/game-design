@@ -23,5 +23,9 @@ public class MoveTowardTarget : MonoBehaviour {
 		{
 			Destroy(gameObject);
 		}
+		if(col.gameObject.CompareTag ("ball"))
+		{
+			Destroy(gameObject);
+		}
 	}
 }

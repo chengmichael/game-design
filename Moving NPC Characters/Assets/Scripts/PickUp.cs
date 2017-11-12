@@ -13,7 +13,7 @@ public class PickUp : MonoBehaviour {
 	void OnMouseDown() {
 		Debug.Log (respawn);
 		if (respawn) 
-			Instantiate (obj, new Vector3(-7.73f, 1.361f, 0f), Quaternion.identity);
+		//	Instantiate (obj, new Vector3(-7.73f, 1.361f, 0f), Quaternion.identity);
 
 		respawn = !respawn;
 	}

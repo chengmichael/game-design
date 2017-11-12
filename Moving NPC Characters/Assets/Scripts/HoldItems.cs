@@ -28,19 +28,19 @@ public class HoldItems : MonoBehaviour {
 	//We can use trigger or Collision
 	void OnTriggerEnter(Collider col)
 	{
-		if (col.gameObject.tag == "ball")
-		if (!ball) // if we don't have anything holding
-			ball = col.gameObject;
+	//	if (col.gameObject.tag == "ball")
+	//	if (!ball) // if we don't have anything holding
+	//		ball = col.gameObject;
 	}
 
 	//We can use trigger or Collision
 	void OnTriggerExit(Collider col)
 	{
-		if (col.gameObject.tag == "ball")
-		{
-			if (canHold)
-				ball = null;
-		}
+//		if (col.gameObject.tag == "ball")
+//		{
+//			if (canHold)
+//				ball = null;
+//		}
 	}
 
 
@@ -53,12 +53,12 @@ public class HoldItems : MonoBehaviour {
 		ball.transform.SetParent(guide);
 
 		//Set gravity to false while holding it
-		ball.GetComponent<Rigidbody>().useGravity = false;
+		//ball.GetComponent<Rigidbody>().useGravity = false;
 
 		//we apply the same rotation our main object (Camera) has.
-		ball.transform.localRotation = transform.rotation;
+		ball.transform.localRotation = guide.rotation;
 		//We re-position the ball on our guide object 
-		ball.transform.position = guide.position;
+		//ball.transform.position = guide.position;
 
 		canHold = false;
 	}
@@ -71,14 +71,17 @@ public class HoldItems : MonoBehaviour {
 		//Set our Gravity to true again.
 		ball.GetComponent<Rigidbody>().useGravity = true;
 		// we don't have anything to do with our ball field anymore
-		ball = null; 
+		//ball = null; 
+
 		//Apply velocity on throwing
 		guide.GetChild(0).gameObject.GetComponent<Rigidbody>().velocity = transform.forward * speed;
 
 		//Unparent our ball
 		guide.GetChild(0).parent = null;
 		canHold = true;
+
 	}
+
 
 
 }//class

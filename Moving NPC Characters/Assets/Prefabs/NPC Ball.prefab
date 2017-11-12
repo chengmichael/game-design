@@ -109,7 +109,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bf533d047eb2544699134126c12e32a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.1
+  speed: 0.3
   targettag: Despawn
 --- !u!135 &135544741939388868
 SphereCollider:
