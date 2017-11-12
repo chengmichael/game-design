@@ -8,6 +8,12 @@ public class HoldItems : MonoBehaviour {
 	public GameObject ball;
 	public Transform guide;
 
+	public int score;
+
+	void Start() {
+		score = 0;
+	}
+
 	void Update()
 	{
 		if (Input.GetMouseButtonDown(0))
