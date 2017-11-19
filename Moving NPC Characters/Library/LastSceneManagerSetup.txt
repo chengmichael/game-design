@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/MovingNPCScene.unity
+- path: Assets/TerrainScene.unity
   isLoaded: 1
   isActive: 1

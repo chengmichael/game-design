@@ -5,13 +5,21 @@ public class HoldItems : MonoBehaviour {
 
 	public float speed = 10;
 	public bool canHold = true;
-	public GameObject ball;
+	public Transform projectile;
 	public Transform guide;
 
 	public int score;
+	private float countdown = 2f;
+
+
+	int nextNameNumber = 0;
+	Transform projectile_ID;
+
+
 
 	void Start() {
 		score = 0;
+		Pickup ();
 	}
 
 	void Update()
@@ -22,62 +30,33 @@ public class HoldItems : MonoBehaviour {
 				throw_drop ();
 			} else {
 				Pickup ();
-				//respawnFood ();
 			}
 		}//mause If
 
-		if (!canHold && ball)
-			ball.transform.position = guide.position;
+		if (!canHold)
+			projectile.transform.position = guide.position;
 
 	}//update
 
-	//We can use trigger or Collision
-	void OnTriggerEnter(Collider col)
-	{
-	//	if (col.gameObject.tag == "ball")
-	//	if (!ball) // if we don't have anything holding
-	//		ball = col.gameObject;
-	}
-
-	//We can use trigger or Collision
-	void OnTriggerExit(Collider col)
-	{
-//		if (col.gameObject.tag == "ball")
-//		{
-//			if (canHold)
-//				ball = null;
-//		}
-	}
-
-
 	private void Pickup()
 	{
-		if (!ball)
-			return;
 
-		//We set the object parent to our guide empty object.
-		ball.transform.SetParent(guide);
+		projectile_ID = Object.Instantiate(projectile, guide.position, guide.rotation);
+		projectile_ID.name = "p" + nextNameNumber; 
+		projectile_ID.GetComponent<Rigidbody>().useGravity = false;
 
-		//Set gravity to false while holding it
-		//ball.GetComponent<Rigidbody>().useGravity = false;
+		projectile_ID.transform.SetParent(guide);
 
-		//we apply the same rotation our main object (Camera) has.
-		ball.transform.localRotation = guide.rotation;
-		//We re-position the ball on our guide object 
-		//ball.transform.position = guide.position;
+		nextNameNumber++;
 
 		canHold = false;
 	}
 
 	private void throw_drop()
 	{
-		if (!ball)
-			return;
-
 		//Set our Gravity to true again.
-		ball.GetComponent<Rigidbody>().useGravity = true;
+		projectile_ID.GetComponent<Rigidbody>().useGravity = true;
 		// we don't have anything to do with our ball field anymore
-		//ball = null; 
 
 		//Apply velocity on throwing
 		guide.GetChild(0).gameObject.GetComponent<Rigidbody>().velocity = transform.forward * speed;
@@ -85,6 +64,7 @@ public class HoldItems : MonoBehaviour {
 		//Unparent our ball
 		guide.GetChild(0).parent = null;
 		canHold = true;
+
 
 	}
 
