@@ -19,9 +19,10 @@ public class HitTarget : MonoBehaviour {
 
 	void OnCollisionEnter (Collision col)
 	{
-		if(col.gameObject.CompareTag ("Despawn"))
+		if(col.gameObject.CompareTag (targettag))
 		{
 			Destroy(gameObject);
+			ScoreKeeper.health -= scoreValue;
 		}
 		if(col.gameObject.CompareTag ("ball"))
 		{

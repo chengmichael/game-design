@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 136237134023358134}
   - component: {fileID: 23215016369423236}
   - component: {fileID: 54134566929969376}
-  - component: {fileID: 114663299995592308}
+  - component: {fileID: 114027049059862470}
   m_Layer: 0
   m_Name: Projectile
   m_TagString: ball
@@ -38,7 +38,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1672206097913724}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.73, y: 1.361, z: 0}
+  m_LocalPosition: {x: -7.099793, y: 1.9393487, z: -1.6502165}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -53,6 +53,7 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -68,6 +69,7 @@ MeshRenderer:
   m_PreserveUVs: 1
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -98,18 +100,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &114663299995592308
+--- !u!114 &114027049059862470
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1672206097913724}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 95344e025bfafa44a91ff2b15f14d358, type: 3}
+  m_Script: {fileID: 11500000, guid: 73fd231f3368f4b29a318f336f6b9260, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obj: {fileID: 1672206097913724}
+  Projectile: {fileID: 4923309470102508}
 --- !u!136 &136237134023358134
 CapsuleCollider:
   m_ObjectHideFlags: 1
