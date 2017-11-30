@@ -9,7 +9,6 @@ public class HoldItems : MonoBehaviour {
 	public Transform guide;
 
 	public int score;
-	private float countdown = 2f;
 
 
 	int nextNameNumber = 0;

@@ -113,7 +113,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 0
   scoreValue: 1
-  speed: 1.2
+  speed: 1.4
   targettag: Table
 --- !u!135 &135544741939388868
 SphereCollider:

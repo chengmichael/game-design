@@ -9,6 +9,7 @@ public class ScoreKeeper : MonoBehaviour {
 	public static int score;
 	public static int health;
 
+	public bool lose = false;
 	// Use this for initialization
 	void Awake () {
 		scoreText = GetComponent<Text> ();
@@ -18,9 +19,9 @@ public class ScoreKeeper : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (score == 5) {
+		if (score == 10) {
 			scoreText.text = "You Win!";
-		} else if (health <= 0) {
+		} else if (lose) {
 			scoreText.text = "You Lose :'(";
 		} else {
 			scoreText.text = "Score: " + score + "    Health: " + health;
