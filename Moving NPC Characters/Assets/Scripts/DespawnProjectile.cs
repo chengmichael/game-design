@@ -6,7 +6,8 @@ public class DespawnProjectile : MonoBehaviour {
 
 
 	public Transform Projectile;
-	private float countdown = 10f;
+	public float countdown = 0f;
+	public bool thrown = false;
 
 	void Update () {
 		countdown -= Time.deltaTime;
@@ -14,10 +15,11 @@ public class DespawnProjectile : MonoBehaviour {
 			timerEnded ();
 		}
 	}
-	//WARNING: WILL BREAK IF PROJECTILE IN HAND SOMEHOW TOUCHES THE GROUND
 	void timerEnded()
 	{
-		Destroy(gameObject);
+		if (thrown == true) {
+			Destroy(gameObject);
+		}
 	}
 
 	void OnCollisionEnter (Collision col)
@@ -27,7 +29,7 @@ public class DespawnProjectile : MonoBehaviour {
 			
 			countdown = 2f;
 
-		}
+		} 
 
 	}
 }

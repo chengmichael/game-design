@@ -9,12 +9,10 @@ public class HoldItems : MonoBehaviour {
 	public Transform guide;
 
 	public int score;
-	private float countdown = 2f;
 
 
 	int nextNameNumber = 0;
 	Transform projectile_ID;
-
 
 
 	void Start() {
@@ -58,6 +56,10 @@ public class HoldItems : MonoBehaviour {
 		projectile_ID.GetComponent<Rigidbody>().useGravity = true;
 		// we don't have anything to do with our ball field anymore
 
+		projectile_ID.GetComponent<DespawnProjectile>().countdown = 3.5f;
+		projectile_ID.GetComponent<DespawnProjectile>().thrown = true;
+
+
 		//Apply velocity on throwing
 		guide.GetChild(0).gameObject.GetComponent<Rigidbody>().velocity = transform.forward * speed;
 
@@ -67,6 +69,11 @@ public class HoldItems : MonoBehaviour {
 
 
 	}
+
+
+
+
+
 
 
 

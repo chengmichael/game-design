@@ -9,20 +9,32 @@ public class HitTarget : MonoBehaviour {
 
 	public float speed;
 	public string targettag;
+	private int randnum;
+	private string targetname;
+	private float basespeed = 0.1f;
+	private float countdown = 0f;
+
 
 	// Use this for initialization
 	void Start () {
 		health = 0;
 		scoreValue = 1;
 		tHits = 0;
+		randnum = Random.Range (0, 4);
+
 	}
 
 	void OnCollisionEnter (Collision col)
 	{
-		if(col.gameObject.CompareTag (targettag))
-		{
-			Destroy(gameObject);
+		if (col.gameObject.CompareTag (targettag)) {
+			Destroy (gameObject);
+			GameObject.Find ("Canvas").GetComponent<HealthBar> ().barDisplay -= 0.1f;
+		} else if (col.gameObject.name == targetname) {
+			basespeed = 0;
+			randnum = Random.Range (0, 4);
 		}
+			
+			
 		if(col.gameObject.CompareTag ("ball"))
 		{
 			tHits++;
@@ -32,12 +44,28 @@ public class HitTarget : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (tHits > health) {
-			Debug.Log (scoreValue);
 			ScoreKeeper.score += scoreValue;
-			Debug.Log ("Current score " + ScoreKeeper.score);
 			Destroy (gameObject);
 		}
+
+		if (randnum == 0) {
+			targetname = "Waypoint1";
+		} else if (randnum == 1) {
+			targetname = "Waypoint2";
+		} else if (randnum == 2) {
+			targetname = "Waypoint3";
+		} else if (randnum == 3) {
+			targetname = "WaypointFinal";
+		}
+
 		transform.position = Vector3.MoveTowards (transform.position, 
-			GameObject.FindGameObjectWithTag(targettag).transform.position, (speed * 0.1f));
+			GameObject.Find (targetname).transform.position, (speed * basespeed));
+			//GameObject.FindGameObjectWithTag(targettag).transform.position, (speed * 0.1f));
+
+
+
 	}
+
+
+
 }

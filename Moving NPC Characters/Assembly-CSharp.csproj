@@ -52,12 +52,14 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\DespawnProjectile.cs" />
+     <Compile Include="Assets\Scripts\HealthBar.cs" />
      <Compile Include="Assets\Scripts\HitTarget.cs" />
      <Compile Include="Assets\Scripts\HoldItems.cs" />
-     <Compile Include="Assets\Scripts\HoldItemsAlternative.cs" />
-     <Compile Include="Assets\Scripts\PickUp.cs" />
+     <Compile Include="Assets\Scripts\MakeTransparent.cs" />
      <Compile Include="Assets\Scripts\ScoreKeeper.cs" />
      <Compile Include="Assets\Scripts\Spawn_NPC.cs" />
+     <Compile Include="Assets\Transparent.cs" />
+     <Compile Include="Assets\Trasnparent.cs" />
      <None Include="Assets\Standard Assets\Environment\Water\Water4\Shaders\FXWater4Simple.shader" />
      <None Include="Assets\Standard Assets\Environment\Water (Basic)\Shaders\FXWaterBasic.shader" />
      <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
