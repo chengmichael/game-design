@@ -30,7 +30,7 @@ public class HitTarget : MonoBehaviour {
 			Destroy (gameObject);
 			GameObject.Find ("Canvas").GetComponent<HealthBar> ().barDisplay -= 0.1f;
 		} else if (col.gameObject.name == targetname) {
-			basespeed = 0;
+			//basespeed = 0;
 			randnum = Random.Range (0, 4);
 		}
 			
@@ -60,6 +60,10 @@ public class HitTarget : MonoBehaviour {
 
 		transform.position = Vector3.MoveTowards (transform.position, 
 			GameObject.Find (targetname).transform.position, (speed * basespeed));
+		
+		Vector3 targetdir = GameObject.Find (targetname).transform.position - transform.position;
+
+		transform.rotation = Quaternion.LookRotation (targetdir);
 			//GameObject.FindGameObjectWithTag(targettag).transform.position, (speed * 0.1f));
 
 

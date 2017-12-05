@@ -2,7 +2,7 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\HitTarget.cs">
     <Files>
-      <File FileName="Assets\Scripts\HitTarget.cs" Line="29" Column="37" />
+      <File FileName="Assets\Scripts\HitTarget.cs" Line="64" Column="62" />
       <File FileName="Assets\Scripts\ScoreKeeper.cs" Line="23" Column="10" />
       <File FileName="Assets\Scripts\HoldItems.cs" Line="65" Column="3" />
       <File FileName="Assets\Scripts\Spawn_NPC.cs" Line="10" Column="1" />
