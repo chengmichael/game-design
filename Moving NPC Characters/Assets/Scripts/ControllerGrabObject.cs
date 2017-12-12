@@ -80,7 +80,7 @@ public class ControllerGrabObject : MonoBehaviour {
 		if (GetComponent<FixedJoint>()) {
 			GetComponent<FixedJoint>().connectedBody = null;
 			Destroy(GetComponent<FixedJoint>());
-			objectInHand.GetComponent<Rigidbody>().velocity = Controller.velocity * 2f;
+			objectInHand.GetComponent<Rigidbody>().velocity = Controller.velocity * 3f;
 			objectInHand.GetComponent<Rigidbody>().angularVelocity = Controller.angularVelocity * 0.75f;
 		}
 		objectInHand = null;
@@ -116,7 +116,7 @@ public class ControllerGrabObject : MonoBehaviour {
 			if (objectInHand) {
 				if (Controller.GetHairTriggerDown ()) {
 					ShootObject ();
-					shotCooldown = 2f;
+					shotCooldown = .75f;
 				}
 			} else {
 				SpawnObject ();
