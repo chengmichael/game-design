@@ -112,6 +112,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 0
+  exitEffect: {fileID: 198194891570936964, guid: c0c3b3f77bf144c16a773f8d368a66f0,
+    type: 2}
   scoreValue: 1
   speed: 1.4
   targettag: Table
