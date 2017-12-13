@@ -19,6 +19,7 @@ public class DespawnProjectile : MonoBehaviour {
 	{
 		if (thrown == true) {
 			Destroy(gameObject);
+
 		}
 	}
 

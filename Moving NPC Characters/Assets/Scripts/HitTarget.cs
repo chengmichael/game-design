@@ -9,11 +9,12 @@ public class HitTarget : MonoBehaviour {
 
 	public float speed;
 	public string targettag;
+	private int curr_randnum;
 	private int randnum;
 	private string targetname;
 	private float basespeed = 0.1f;
-	private float countdown = 0f;
-
+	//private float countdown = 0f;
+	public AudioClip eatingsound;
 
 	// Use this for initialization
 	void Start () {
@@ -21,8 +22,13 @@ public class HitTarget : MonoBehaviour {
 		scoreValue = 1;
 		tHits = 0;
 		randnum = Random.Range (0, 4);
+		GetComponent<AudioSource> ().playOnAwake = false;
+		GetComponent<AudioSource> ().clip = eatingsound;
 
 	}
+
+
+
 
 	void OnCollisionEnter (Collision col)
 	{
@@ -30,13 +36,16 @@ public class HitTarget : MonoBehaviour {
 			Destroy (gameObject);
 			GameObject.Find ("Canvas").GetComponent<HealthBar> ().barDisplay -= 0.1f;
 		} else if (col.gameObject.name == targetname) {
-			//basespeed = 0;
-			randnum = Random.Range (0, 4);
+			curr_randnum = randnum;
+			while (randnum == curr_randnum) {
+				randnum = Random.Range (0, 4);
+			}
 		}
 			
 			
 		if(col.gameObject.CompareTag ("ball"))
 		{
+			AudioSource.PlayClipAtPoint (eatingsound, transform.position);
 			tHits++;
 		}
 	}
@@ -45,7 +54,9 @@ public class HitTarget : MonoBehaviour {
 	void Update () {
 		if (tHits > health) {
 			ScoreKeeper.score += scoreValue;
+
 			Destroy (gameObject);
+
 		}
 
 		if (randnum == 0) {

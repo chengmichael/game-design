@@ -10,7 +10,6 @@ public class HoldItems : MonoBehaviour {
 
 	public int score;
 
-
 	int nextNameNumber = 0;
 	Transform projectile_ID;
 
@@ -62,7 +61,7 @@ public class HoldItems : MonoBehaviour {
 
 		//Apply velocity on throwing
 		guide.GetChild(0).gameObject.GetComponent<Rigidbody>().velocity = transform.forward * speed;
-
+		GetComponent<AudioSource>().Play();	
 		//Unparent our ball
 		guide.GetChild(0).parent = null;
 		canHold = true;
