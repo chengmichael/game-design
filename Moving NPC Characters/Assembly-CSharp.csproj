@@ -53,6 +53,7 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\ControllerGrabObject.cs" />
      <Compile Include="Assets\Scripts\DespawnProjectile.cs" />
+     <Compile Include="Assets\Scripts\FoodBombExplode.cs" />
      <Compile Include="Assets\Scripts\HealthBar.cs" />
      <Compile Include="Assets\Scripts\HitTarget.cs" />
      <Compile Include="Assets\Scripts\HoldItems.cs" />

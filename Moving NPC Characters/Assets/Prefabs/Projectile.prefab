@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 54134566929969376}
   - component: {fileID: 114027049059862470}
   m_Layer: 0
-  m_Name: Projectile
+  m_Name: Food
   m_TagString: ball
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -38,7 +38,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1672206097913724}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.246093, y: 2.26, z: -0.6767379}
+  m_LocalPosition: {x: -8.224722, y: 2.26, z: -0.6468819}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -58,7 +58,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 0040f026bf84f4b0c880de454898e7ba, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -111,7 +111,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73fd231f3368f4b29a318f336f6b9260, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Projectile: {fileID: 4923309470102508}
 --- !u!136 &136237134023358134
 CapsuleCollider:
   m_ObjectHideFlags: 1

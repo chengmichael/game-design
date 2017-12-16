@@ -4,14 +4,15 @@ using UnityEngine;
 
 public class DespawnProjectile : MonoBehaviour {
 
-
-	public Transform Projectile;
-	private float countdown = 10f;
+	private float countdown = 2f;
+	private bool timerOn = false; 
 
 	void Update () {
-		countdown -= Time.deltaTime;
-		if (countdown <= 0.0f) {
-			timerEnded ();
+		if (timerOn) {
+			countdown -= Time.deltaTime;
+			if (countdown <= 0.0f) {
+				timerEnded ();
+			}
 		}
 	}
 	//WARNING: WILL BREAK IF PROJECTILE IN HAND SOMEHOW TOUCHES THE GROUND
@@ -25,7 +26,7 @@ public class DespawnProjectile : MonoBehaviour {
 		if(col.gameObject.CompareTag ("GroundDespawn"))
 		{
 			
-			countdown = 2f;
+			timerOn = true;
 
 		}
 
