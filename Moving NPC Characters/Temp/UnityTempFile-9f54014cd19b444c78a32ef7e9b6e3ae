@@ -265,6 +265,7 @@
 'Assets/SteamVR/Scripts/SteamVR_TrackedObject.cs'
 'Assets/SteamVR/Scripts/SteamVR_UpdatePoses.cs'
 'Assets/SteamVR/Scripts/SteamVR_Utils.cs'
+'Assets/TestAnimation.cs'
 'Assets/VoxelWorld/VoxelWorld - Effects (Free)/Scripts/Mover.cs'
 -r:'/Applications/Unity/Unity.app/Contents/Mono/lib/mono/unity/System.Runtime.Serialization.dll'
 -r:'/Applications/Unity/Unity.app/Contents/Mono/lib/mono/unity/System.Xml.Linq.dll'

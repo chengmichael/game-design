@@ -41,7 +41,7 @@ public class HoldItems : MonoBehaviour {
 	{
 
 		projectile_ID = Object.Instantiate(projectile, guide.position, guide.rotation);
-		projectile_ID.name = "p" + nextNameNumber; 
+		projectile_ID.name = "food_" + nextNameNumber; 
 		projectile_ID.GetComponent<Rigidbody>().useGravity = false;
 
 		projectile_ID.transform.SetParent(guide);
