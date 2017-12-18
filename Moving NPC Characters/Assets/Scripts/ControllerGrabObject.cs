@@ -8,13 +8,11 @@ public class ControllerGrabObject : MonoBehaviour {
 	private GameObject collidingObject; 
 	private GameObject objectInHand; 
 	private float shotCooldown = 1.5f;
-
-	public float speed = 20;
-	public bool canHold = true;
+	private float speed = 20;
+	private bool canHold = true;
+	private bool shootMode = true; 
 	public GameObject projectile;
 	public Transform hand;
-
-	public int score;
 
 	int nextNameNumber = 0;
 
@@ -24,7 +22,6 @@ public class ControllerGrabObject : MonoBehaviour {
 	}
 
 	void Awake(){
-		score = 0;
 		SpawnObject ();
 		trackedObj = GetComponent<SteamVR_TrackedObject>();
 	}
@@ -96,30 +93,61 @@ public class ControllerGrabObject : MonoBehaviour {
 		objectInHand = null;
 	}
 
+	private void clearHand() {
+		//trying to destroy all food objects in hand
+		if (collidingObject) {
+			if (collidingObject.tag == "food") {
+				Destroy (collidingObject);
+				//SetCollidingObject ();
+			} 
+		}
+		if (objectInHand) {
+			if (objectInHand.tag == "food") {
+				Destroy (objectInHand);
+			} 
+		}
+//		if (collidingObject.tag == "food") {
+//			Destroy (collidingObject);
+//		}
+	}
+
 	// Update is called once per frame
 	void Update () {
-		//		if (Controller.GetHairTriggerDown()) {
-		//			if (collidingObject) {
-		//				GrabObject();
-		//			}
-		//		}
-		//
-		//		if (Controller.GetHairTriggerUp()) {
-		//			if (objectInHand) {
-		//				ReleaseObject();
-		//			}
-		//		}
+		
 
-		shotCooldown -= Time.deltaTime;
-		if (shotCooldown <= 0.0f) {
+		if (shootMode) {
+			if (Controller.GetPressDown (SteamVR_Controller.ButtonMask.Grip)) {
+				shootMode = false;
+				clearHand ();
+			}
 
-			if (objectInHand) {
-				if (Controller.GetHairTriggerDown ()) {
-					ShootObject ();
-					shotCooldown = .75f;
+			shotCooldown -= Time.deltaTime;
+			if (shotCooldown <= 0.0f) {
+				if (objectInHand) {
+					if (Controller.GetHairTriggerDown ()) {
+						ShootObject ();
+						shotCooldown = .75f;
+					}
+				} else {
+					SpawnObject ();
 				}
-			} else {
-				SpawnObject ();
+			}
+		} else {
+			if (Controller.GetPressDown (SteamVR_Controller.ButtonMask.Grip)) {
+				shootMode = true;
+				clearHand ();
+			}
+
+			if (Controller.GetHairTriggerDown()) {
+				if (collidingObject) {
+					GrabObject();
+				}
+			}
+
+			if (Controller.GetHairTriggerUp()) {
+				if (objectInHand) {
+					ReleaseObject();
+				}
 			}
 		}
 	}

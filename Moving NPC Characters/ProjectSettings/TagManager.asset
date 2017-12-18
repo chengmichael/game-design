@@ -9,6 +9,8 @@ TagManager:
   - NPCChar
   - ball
   - Table
+  - GroundDespawn
+  - food
   layers:
   - Default
   - TransparentFX

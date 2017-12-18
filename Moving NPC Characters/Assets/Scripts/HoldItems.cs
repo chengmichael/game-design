@@ -3,8 +3,8 @@ using System.Collections;
 
 public class HoldItems : MonoBehaviour {
 
-	public float speed = 10;
-	public bool canHold = true;
+	private float speed = 20;
+	private bool canHold = true;
 	public Transform projectile;
 	public Transform guide;
 

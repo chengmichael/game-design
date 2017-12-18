@@ -26,7 +26,7 @@ public class HitTarget : MonoBehaviour {
 			Destroy(gameObject);
 			ScoreKeeper.health -= scoreValue;
 		}
-		if(col.gameObject.CompareTag ("ball"))
+		if(col.gameObject.CompareTag ("food"))
 		{
 			tHits++;
 		}
