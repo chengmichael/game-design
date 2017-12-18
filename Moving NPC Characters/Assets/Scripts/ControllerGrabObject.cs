@@ -9,7 +9,7 @@ public class ControllerGrabObject : MonoBehaviour {
 	private GameObject objectInHand; 
 	private float shotCooldown = 1.5f;
 
-	public float speed = 15;
+	public float speed = 20;
 	public bool canHold = true;
 	public GameObject projectile;
 	public Transform hand;
@@ -60,7 +60,7 @@ public class ControllerGrabObject : MonoBehaviour {
 
 	private void SpawnObject() {
 		objectInHand = Instantiate(projectile, hand.position, Quaternion.LookRotation(hand.forward)) as GameObject;
-		objectInHand.name = "p" + nextNameNumber; 
+		objectInHand.name = "food_" + nextNameNumber; 
 		//objectInHand.GetComponent<Rigidbody>().useGravity = false;
 
 		var joint = AddFixedJoint();
@@ -80,7 +80,7 @@ public class ControllerGrabObject : MonoBehaviour {
 		if (GetComponent<FixedJoint>()) {
 			GetComponent<FixedJoint>().connectedBody = null;
 			Destroy(GetComponent<FixedJoint>());
-			objectInHand.GetComponent<Rigidbody>().velocity = Controller.velocity * 2f;
+			objectInHand.GetComponent<Rigidbody>().velocity = Controller.velocity * 3f;
 			objectInHand.GetComponent<Rigidbody>().angularVelocity = Controller.angularVelocity * 0.75f;
 		}
 		objectInHand = null;
@@ -116,7 +116,7 @@ public class ControllerGrabObject : MonoBehaviour {
 			if (objectInHand) {
 				if (Controller.GetHairTriggerDown ()) {
 					ShootObject ();
-					shotCooldown = 2f;
+					shotCooldown = .75f;
 				}
 			} else {
 				SpawnObject ();

@@ -5,8 +5,9 @@ using UnityEngine;
 public class HitTarget : MonoBehaviour {
 	public int health;
 	private int tHits;
-	public int scoreValue;
+	public ParticleSystem exitEffect;
 
+	public int scoreValue;
 	public float speed;
 	public string targettag;
 
@@ -15,6 +16,7 @@ public class HitTarget : MonoBehaviour {
 		health = 0;
 		scoreValue = 1;
 		tHits = 0;
+
 	}
 
 	void OnCollisionEnter (Collision col)
@@ -37,6 +39,7 @@ public class HitTarget : MonoBehaviour {
 			ScoreKeeper.score += scoreValue;
 			Debug.Log ("Current score " + ScoreKeeper.score);
 			Destroy (gameObject);
+			Instantiate (exitEffect, transform.position, transform.rotation);
 		}
 		transform.position = Vector3.MoveTowards (transform.position, 
 			GameObject.FindGameObjectWithTag(targettag).transform.position, (speed * 0.1f));

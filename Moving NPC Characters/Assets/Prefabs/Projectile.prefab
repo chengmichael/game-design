@@ -38,7 +38,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1672206097913724}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.994664, y: 1.7333302, z: -0.13219112}
+  m_LocalPosition: {x: 29.518272, y: 1.9200512, z: -0.33188874}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -111,7 +111,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73fd231f3368f4b29a318f336f6b9260, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Projectile: {fileID: 4923309470102508}
 --- !u!136 &136237134023358134
 CapsuleCollider:
   m_ObjectHideFlags: 1
