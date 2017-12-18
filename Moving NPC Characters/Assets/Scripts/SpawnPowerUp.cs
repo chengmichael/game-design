@@ -7,7 +7,7 @@ public class SpawnPowerUp : MonoBehaviour {
 	public GameObject powerUp;
 	private float countdown = 10f;
 	private int maxPowerUps = 3;
-	private int existingPowerUps;
+	public static int existingPowerUps;
 
 	private GameObject[] powerUps;
 	private Vector3 heightSpawn = new Vector3(0, 1, 0);

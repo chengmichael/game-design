@@ -25,6 +25,7 @@ public class FoodBombExplode : MonoBehaviour {
 		if(col.gameObject.CompareTag ("GroundDespawn") || col.gameObject.CompareTag("NPCChar"))
 		{
 			Explode ();
+			SpawnPowerUp.existingPowerUps = SpawnPowerUp.existingPowerUps - 1;
 			Destroy (gameObject);
 		}
 
