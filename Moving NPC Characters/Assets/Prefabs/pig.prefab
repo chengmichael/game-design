@@ -929,7 +929,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 10
   exitEffect: {fileID: 0}
-  scoreValue: 10
+  scoreValue: 1
   speed: 1.2
   targettag: Table
 --- !u!135 &135694036902213570
