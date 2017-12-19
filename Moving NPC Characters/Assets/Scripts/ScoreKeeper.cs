@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class ScoreKeeper : MonoBehaviour {
 	private Text scoreText;
@@ -14,14 +15,17 @@ public class ScoreKeeper : MonoBehaviour {
 	void Awake () {
 		scoreText = GetComponent<Text> ();
 		score = 0;
-		health = 10;
+		health = 15;
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		if (score == 10) {
 			scoreText.text = "You Win!";
-		} else if (lose) {
+
+			SceneManager.LoadScene ("MovingNPCScene", LoadSceneMode.Single);
+
+		} else if (health <= 0) {
 			scoreText.text = "You Lose :'(";
 		} else {
 			scoreText.text = "Score: " + score + "    Health: " + health;

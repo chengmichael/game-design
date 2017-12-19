@@ -11,20 +11,31 @@ public class HitTarget : MonoBehaviour {
 	public float speed;
 	public string targettag;
 
+	private int curr_randnum;
+	private int randnum;
+	private string targetname;
+	private float basespeed = 0.1f;
+	public AudioClip eatingsound;
+
 	// Use this for initialization
 	void Start () {
 		health = 0;
 		scoreValue = 1;
 		tHits = 0;
+		randnum = Random.Range (0, 4);
 
 	}
 
 	void OnCollisionEnter (Collision col)
 	{
-		if(col.gameObject.CompareTag (targettag))
-		{
-			Destroy(gameObject);
+		if (col.gameObject.CompareTag (targettag)) {
+			Destroy (gameObject);
 			ScoreKeeper.health -= scoreValue;
+		} else if (col.gameObject.name == targetname) {
+			curr_randnum = randnum;
+			while (randnum == curr_randnum) {
+				randnum = Random.Range (0, 4);
+			}
 		}
 		if(col.gameObject.CompareTag ("food"))
 		{
@@ -41,7 +52,20 @@ public class HitTarget : MonoBehaviour {
 			Destroy (gameObject);
 			Instantiate (exitEffect, transform.position, transform.rotation);
 		}
+
+		if (randnum == 0) {
+			targetname = "Waypoint1";
+		} else if (randnum == 1) {
+			targetname = "Waypoint2";
+		} else if (randnum == 2) {
+			targetname = "Waypoint3";
+		} else if (randnum == 3) {
+			targetname = "WaypointFinal";
+		}
+
 		transform.position = Vector3.MoveTowards (transform.position, 
-			GameObject.FindGameObjectWithTag(targettag).transform.position, (speed * 0.1f));
+			GameObject.Find (targetname).transform.position, (speed * 0.1f));
+		Vector3 targetdir = GameObject.Find (targetname).transform.position - transform.position;
+		transform.rotation = Quaternion.LookRotation (targetdir);
 	}
 }

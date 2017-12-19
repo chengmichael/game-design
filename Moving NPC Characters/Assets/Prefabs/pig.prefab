@@ -429,7 +429,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4674821384241846}
   - component: {fileID: 95076229806468698}
-  - component: {fileID: 54577697315377462}
   m_Layer: 0
   m_Name: swine
   m_TagString: NPCChar
@@ -835,14 +834,14 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1062768789558992}
-  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 7.69, y: 1.2, z: 0}
   m_LocalScale: {x: 15, y: 15, z: 15}
   m_Children:
   - {fileID: 4674821384241846}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4985240988720894
 Transform:
   m_ObjectHideFlags: 1
@@ -868,21 +867,6 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!54 &54577697315377462
-Rigidbody:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1983207465797494}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
@@ -916,10 +900,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
-  exitEffect: {fileID: 0}
+  exitEffect: {fileID: 198194891570936964, guid: c0c3b3f77bf144c16a773f8d368a66f0,
+    type: 2}
   scoreValue: 1
-  speed: 1.2
+  speed: 1
   targettag: Table
+  eatingsound: {fileID: 0}
 --- !u!135 &135694036902213570
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -930,8 +916,8 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.04
-  m_Center: {x: 0, y: -0.01760699, z: 0}
+  m_Radius: 0.05
+  m_Center: {x: 0, y: 0.03, z: 0}
 --- !u!137 &137549896177972908
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

@@ -4,4 +4,10 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/level1_scene.unity
+    guid: 8bf5f3f66296448b482d4db7cd938014
+  - enabled: 1
+    path: Assets/MovingNPCScene.unity
+    guid: ae5cbcc498fd5244ab73901211163d12
