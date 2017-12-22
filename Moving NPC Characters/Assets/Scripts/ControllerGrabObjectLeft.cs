@@ -13,6 +13,8 @@ public class ControllerGrabObjectLeft : MonoBehaviour {
 	private bool shootMode = true; 
 	public GameObject projectile;
 	public Transform hand;
+	public AudioClip throwingSound;
+
 
 	int nextNameNumber = 0;
 
@@ -84,6 +86,7 @@ public class ControllerGrabObjectLeft : MonoBehaviour {
 			if (objectInHand) {
 				if (Controller.GetHairTriggerDown ()) {
 					ShootObject ();
+					AudioSource.PlayClipAtPoint (throwingSound, transform.position);
 					shotCooldown = .75f;
 				}
 			} else {

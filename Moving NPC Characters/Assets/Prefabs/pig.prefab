@@ -903,9 +903,10 @@ MonoBehaviour:
   exitEffect: {fileID: 198194891570936964, guid: c0c3b3f77bf144c16a773f8d368a66f0,
     type: 2}
   scoreValue: 1
-  speed: 1
+  speed: 0.7
   targettag: Table
-  eatingsound: {fileID: 0}
+  eatingsound: {fileID: 8300000, guid: 4d70b3c9f56704c19a5467717e811559, type: 3}
+  targetScore: 15
 --- !u!135 &135694036902213570
 SphereCollider:
   m_ObjectHideFlags: 1

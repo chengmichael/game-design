@@ -23,6 +23,8 @@ public class HitTarget : MonoBehaviour {
 		scoreValue = 1;
 		tHits = 0;
 		randnum = Random.Range (0, 4);
+		GetComponent<AudioSource> ().playOnAwake = false;
+		GetComponent<AudioSource> ().clip = eatingsound;
 
 	}
 
@@ -40,7 +42,9 @@ public class HitTarget : MonoBehaviour {
 		if(col.gameObject.CompareTag ("food"))
 		{
 			tHits++;
+			AudioSource.PlayClipAtPoint (eatingsound, transform.position);
 		}
+
 	}
 
 	// Update is called once per frame

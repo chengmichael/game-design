@@ -922,6 +922,7 @@ MonoBehaviour:
   speed: 2
   targettag: Table
   eatingsound: {fileID: 0}
+  targetScore: 5
 --- !u!135 &135964940637389944
 SphereCollider:
   m_ObjectHideFlags: 1

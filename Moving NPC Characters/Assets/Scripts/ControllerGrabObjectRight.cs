@@ -11,7 +11,7 @@ public class ControllerGrabObjectRight : MonoBehaviour {
 	private float speed = 20;
 	private bool canHold = true;
 	private bool shootMode = true; 
-	public Transform hand;
+	public AudioClip throwingSound;
 
 	int nextNameNumber = 0;
 
@@ -81,6 +81,7 @@ public class ControllerGrabObjectRight : MonoBehaviour {
 		if (Controller.GetHairTriggerUp()) {
 			if (objectInHand) {
 				ReleaseObject();
+				AudioSource.PlayClipAtPoint (throwingSound, transform.position);
 			}
 		}
 	}

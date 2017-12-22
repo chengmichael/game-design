@@ -9,6 +9,7 @@ public class ScoreKeeper : MonoBehaviour {
 
 	public static int score;
 	public static int health;
+	public static int targetScore;
 
 	public bool lose = false;
 	// Use this for initialization
@@ -20,7 +21,7 @@ public class ScoreKeeper : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (score == 10) {
+		if (score == targetScore) {
 			scoreText.text = "You Win!";
 
 			SceneManager.LoadScene ("MovingNPCScene", LoadSceneMode.Single);
